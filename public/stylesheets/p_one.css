@@ -178,6 +178,23 @@ h1
     opacity: .75;
     color: rgb(39, 55, 143);
 }
+
+.alink
+{
+    margin: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    transition: opacity .3s;
+    letter-spacing: .1em;
+    text-decoration: none!important;
+    color: rgb(39, 55, 143);
+}
+
+.alink:hover
+{
+  opacity: .75;
+}
+
 h2{
   color: rgb(39, 55, 143);
   opacity: .75;
