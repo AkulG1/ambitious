@@ -1,5 +1,12 @@
 /*  define userpic margin padding etc later */
+html, body {
+  overflow-y: auto;
+  min-height: 100%;
+}
 
+mdl-layout {
+  min-height: 100%;
+}
 
 .sidenav .closebtn
 {
