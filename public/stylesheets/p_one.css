@@ -9,6 +9,7 @@
     bottom: 0px;
     background-color: rgba(0, 0, 0, 0.589);
     z-index: 2;
+    opacity: 0;
   }
 
 .sidenav .closebtn
@@ -305,6 +306,10 @@ body
     {
         margin-right: 3%;
         margin-left: 3%;
+        margin-top: 3px;
+    margin-bottom: 47px;
+        
+    box-shadow: 4px 4px 11px rgba(33, 33, 33, .2);
     }
     .form1
     {

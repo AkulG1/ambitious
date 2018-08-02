@@ -54,7 +54,15 @@ app.get('/jeemain/:year/:paper', function (req, res) {
     if (eve !== -1) {
         filename = filename + req.params.paper.substr(eve, req.params.paper.length);
     }
-    res.download(__dirname + '/downloads/jee_main/' + req.params.year + '/' + filename+'.pdf')
+    res.download(__dirname + '/downloads/jee_main/' + req.params.year + '/' + filename + '.pdf')
+});
+
+app.get('/bitsat/:op', function (req, res) {
+    res.render(__dirname + '/views/bitsat/' + req.params.op);
+});
+
+app.get('/bitsat/:op/:year', function (req, res) {
+    res.download(__dirname + '/downloads/bitsat/' + req.params.op + '/' + req.params.year + '.pdf')
 });
 
 
