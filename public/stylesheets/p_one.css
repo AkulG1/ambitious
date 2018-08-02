@@ -1,11 +1,14 @@
 /*  define userpic margin padding etc later */
-html, body {
-  overflow-y: auto;
-  min-height: 100%;
-}
 
-mdl-layout {
-  min-height: 100%;
+#cover{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    z-index:5;
+    width:100%;
+    height:100%;
+    display:none;
 }
 
 .sidenav .closebtn
