@@ -16,7 +16,7 @@ function openNav() {
     document.getElementById("mySidenav").style.width = "180px";
   }
   document.getElementById("mySidenav").style.boxShadow = "0.6px 0.6px 10px black";
-  document.body.classList.add("cover");
+  $('.overlay').show();
 }
 
 $(document.body).click(function(evt){
@@ -24,9 +24,12 @@ $(document.body).click(function(evt){
   var itselements=$(".nottarget");
   if (!snav.is(evt.target) && !itselements.is(evt.target) && window.matchMedia("(max-width: 768px)").matches){
     document.getElementById("mySidenav").style.width = 0;
+    $('.overlay').hide();
 }
 });
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+  $('.overlay').hide();
+  
 }
