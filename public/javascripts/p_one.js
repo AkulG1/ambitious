@@ -16,7 +16,7 @@ function openNav() {
     document.getElementById("mySidenav").style.width = "180px";
   }
   document.getElementById("mySidenav").style.boxShadow = "0.6px 0.6px 10px black";
-
+  document.body.classList.add("cover");
 }
 
 $(document.body).click(function(evt){

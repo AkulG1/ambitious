@@ -1,6 +1,6 @@
 /*  define userpic margin padding etc later */
 
-#cover{
+.cover{
     position:fixed;
     top:0;
     left:0;
