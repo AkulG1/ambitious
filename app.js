@@ -3,7 +3,12 @@ var app = express();
 var url = require('url');
 
 var port = process.env.PORT || 3000;
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+
+var login = require('./routes/login');
+var signup = require('./routes/signup');
+
+
 app.use('/assets', express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs')
@@ -11,13 +16,9 @@ app.get('/', function (req, res) {
     res.render('mainpage');
 });
 
-app.get('/login', function (req, res) {
-    res.render('login');
-})
+app.use('/login', login)
 
-app.get('/signup', function (req, res) {
-    res.render('signup');
-})
+app.use('/signup', signup);
 
 app.get('/bitsat', function (req, res) {
     res.render('bitsat');
@@ -64,7 +65,6 @@ app.get('/bitsat/:op', function (req, res) {
 app.get('/bitsat/:op/:year', function (req, res) {
     res.download(__dirname + '/downloads/bitsat/' + req.params.op + '/' + req.params.year + '.pdf')
 });
-
 
 
 app.listen(port);
