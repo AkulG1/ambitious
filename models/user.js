@@ -1,37 +1,45 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost:27017/loginDetails', { useNewUrlParser: true });
+var configDB = require('../config/database.js');
+
+mongoose.connect(configDB.url, { useNewUrlParser: true });
 
 var userSchema = new Schema({
-    username: {
-        type: String,
-        required: [true, 'Email Address cannot be left blank.'],
-        validate: [validateEmail, 'Please fill a valid email address'],
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
-        index: { unique: true, dropDups: true }
+    local: {
+        email: String,
+        password: String,
     },
-    password: { type: String, required: [true, 'Password cannot be left blank.'] },
-
-
-})
-var User = mongoose.model('User', userSchema);
-var john = new User({
-    username: 'John',
-    password: 'test'
+    facebook: {
+        id: String,
+        token: String,
+        name: String,
+        email: String
+    },
+    twitter: {
+        id: String,
+        token: String,
+        displayName: String,
+        username: String
+    },
+    google: {
+        id: String,
+        token: String,
+        email: String,
+        name: String
+    }
 });
 
-john.save(function (err) {
-    if (err) throw err;
-    console.log('Person saved')
-});
+// methods ======================
+// generating a hash
+userSchema.methods.generateHash = function (password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
-var jane = Person({
-    username: 'Jane',
-    password: 'test2'
-});
-jane.save(function (err) {
-    if (err) throw err;
-    console.log('Person saved')
-})
+// checking if password is valid
+userSchema.methods.validPassword = function (password) {
+    return bcrypt.compareSync(password, this.local.password);
+};
 
+// create the model for users and expose it to our app
 module.exports = mongoose.model('Users', userSchema);
