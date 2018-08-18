@@ -4,7 +4,6 @@ var url = require('url');
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -14,7 +13,6 @@ var configDB = require('./config/database.js');
 var userroute = require('./routes');
 
 // 
-mongoose.connect(process.ENV.MongoURL, { useNewUrlParser: true }); // connect to our database
 
 // require('./config/passport')(passport); // pass passport for configuration
 
