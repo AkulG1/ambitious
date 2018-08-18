@@ -14,7 +14,7 @@ var configDB = require('./config/database.js');
 var userroute = require('./routes');
 
 // 
-mongoose.connect(configDB.url, { useNewUrlParser: true }); // connect to our database
+mongoose.connect(process.ENV.MongoURL, { useNewUrlParser: true }); // connect to our database
 
 // require('./config/passport')(passport); // pass passport for configuration
 
@@ -39,7 +39,11 @@ app.use('/assets', express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs')
 
-app.use(session({ secret: 'imnotsurewhatthisisforlol' })); // session secret
+app.use(session({
+    secret: 'imnotsurewhatthisisforlol',
+    resave: true,
+    saveUninitialized: true
+})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

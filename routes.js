@@ -7,7 +7,7 @@ router.get('/login', function (req, res, next) {
 });
 
 router.get('/', function (req, res) {
-    res.render('mainpage');
+    res.render('mainpage', { loggedIn: req.isAuthenticated(), user: req.user });
 });
 
 router.get('/signup', function (req, res, next) {
@@ -54,7 +54,7 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
 
-    // if they aren't redirect them to the home page
+    // if they aren't  logged redirect them to the home page
     res.redirect('/');
 }
 
