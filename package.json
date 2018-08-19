@@ -2,6 +2,9 @@
   "name": "try1",
   "version": "1.0.0",
   "description": "My first ever website",
+  "engines": {
+    "node": "10.6.0"
+  },
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
