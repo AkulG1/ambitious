@@ -1,0 +1,30 @@
+<div class="overlay">
+</div>
+
+<ul id="navbar" class="sticktop">
+  <div id="mySidenav" class="sidenav nottarget">
+    <a href="javascript:void(0)" class="closebtn nottarget" onclick="closeNav()">&times;</a>
+    <a id="logo" class="nottarget" href="/">
+      <img class="nottarget" src="/assets/images/logo.png" alt="Logo">
+    </a>
+    <a class="navlink thirtytwoleft nottarget" href="/">Home</a>
+    <!-- <a id="userpic" class="nottarget" href=""><img src="usericon.png" alt="usericon"></a> -->
+    <% if(user){ %>
+      <a class="navlink thirtytwoleft nottarget" href="/profile">
+        <%=user.local.email%>
+      </a>
+      <% }else{ %>
+        <a class="navlink thirtytwoleft nottarget" href="/login">Login</a>
+        <a class="navlink thirtytwoleft oneline nottarget" href="/signup">Sign Up</a>
+        <%}%>
+          <a class="navlink thirtytwoleft nottarget" href="/contact">Contact</a>
+  </div>
+  <span id="ham" class="nottarget" onclick="openNav()">
+    <img class="nottarget" src='/assets/images/ham.png'>
+  </span>
+</ul>
+
+
+<div style="margin-bottom:100px">
+
+</div>

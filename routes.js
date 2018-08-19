@@ -3,15 +3,15 @@ var router = express.Router();
 var passport = require('passport');
 
 router.get('/login', function (req, res, next) {
-    res.render('login', { message: req.flash('loginMessage') });
+    res.render('login', { message: req.flash('loginMessage'), user: req.user });
 });
 
 router.get('/', function (req, res) {
-    res.render('mainpage', { loggedIn: req.isAuthenticated(), user: req.user });
+    res.render('mainpage', { user: req.user });
 });
 
 router.get('/signup', function (req, res, next) {
-    res.render('signup', { message: req.flash('signupMessage') });
+    res.render('signup', { message: req.flash('signupMessage'), user: req.user });
 });
 // process the login form
 router.post('/login', passport.authenticate('local-login', {
@@ -65,27 +65,27 @@ router.post('/login', passport.authenticate('local-login', {
 }));
 
 router.get('/bitsat', function (req, res) {
-    res.render('bitsat');
+    res.render('bitsat', { user: req.user });
 })
 
 router.get('/aieee', function (req, res) {
-    res.render('aieee');
+    res.render('aieee', { user: req.user });
 })
 
 router.get('/ip', function (req, res) {
-    res.render('ip');
+    res.render('ip', { user: req.user });
 })
 
 router.get('/jeemain', function (req, res) {
-    res.render('jeemain');
+    res.render('jeemain', { user: req.user });
 })
 
 router.get('/jeeadvanced', function (req, res) {
-    res.render('jeeadvanced');
+    res.render('jeeadvanced', { user: req.user });
 })
 
 router.get('/jeemain/:year', function (req, res) {
-    res.render(__dirname + '/views/jee_main/' + req.params.year);
+    res.render(__dirname + '/views/jee_main/' + req.params.year, { user: req.user });
 });
 
 router.get('/jeemain/:year/:paper', function (req, res) {
@@ -103,7 +103,7 @@ router.get('/jeemain/:year/:paper', function (req, res) {
 });
 
 router.get('/bitsat/:op', function (req, res) {
-    res.render(__dirname + '/views/bitsat/' + req.params.op);
+    res.render(__dirname + '/views/bitsat/' + req.params.op, { user: req.user });
 });
 
 router.get('/bitsat/:op/:year', function (req, res) {

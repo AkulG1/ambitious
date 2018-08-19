@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 var configDB = require('../config/database.js');
 
-mongoose.connect(process.env.MongoURL, { useNewUrlParser: true });
+mongoose.connect(process.env.MongoURL || configDB.url, { useNewUrlParser: true });
 
 var userSchema = new Schema({
     local: {
