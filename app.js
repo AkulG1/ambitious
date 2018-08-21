@@ -50,5 +50,5 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 app.use(userroute);
-
+console.log("App Listening at port:" + port);
 app.listen(port);
