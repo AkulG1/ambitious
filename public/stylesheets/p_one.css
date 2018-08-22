@@ -117,12 +117,12 @@
     background: #e74b37;
 }
 
-.sticktop{
-  position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    z-index:5; /*Add this*/
+/* .sticktop{
+  position: fixed; Set the navbar to fixed position
+    top: 0; Position the navbar at the top of the page
+    z-index:5; Add this
 
-}
+} */
 
 #navbar
 {
