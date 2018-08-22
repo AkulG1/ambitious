@@ -165,6 +165,10 @@ html,
 body
 {
     font-family: 'Catamaran', sans-serif;
+
+    overflow-x: hidden;
+
+    width: 100%;
 }
 
 h1
