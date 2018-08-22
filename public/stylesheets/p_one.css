@@ -322,7 +322,7 @@ body
     }
     #navbar
     {
-        height: 35px;
+        height: 50px;
 
         box-shadow: 1px 1px 8px rgba(0, 0, 0, .51);
     }
@@ -396,7 +396,7 @@ body
     }
     #navbar
     {
-        height: 38px;
+        height: 60px;
 
         box-shadow: 1px 1px 8px rgba(0, 0, 0, .51);
     }
@@ -471,7 +471,7 @@ body
     }
     #navbar
     {
-        height: 40px;
+        height: 70px;
 
         box-shadow: 1px 1px 8px rgba(0, 0, 0, .51);
     }
@@ -546,7 +546,7 @@ body
     }
     #navbar
     {
-        height: 45px;
+        height: 80px;
 
         box-shadow: 1px 1px 8px rgba(0, 0, 0, .51);
     }
