@@ -9,10 +9,9 @@ router.get('/login', function (req, res, next) {
 router.get('/', function (req, res) {
     if (req.headers.host.match(/^www/) == null) {
         res.redirect('http://www.' + req.headers.host + req.url, 301);
-    } else {
-        res.render('mainpage', { user: req.user });
-
     }
+    res.render('mainpage', { user: req.user });
+
 });
 
 router.get('/signup', function (req, res, next) {
