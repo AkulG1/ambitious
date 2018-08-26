@@ -7,9 +7,6 @@ router.get('/login', function (req, res, next) {
 });
 
 router.get('/', function (req, res) {
-    if (req.headers.host.match(/^www/) == null) {
-        res.redirect('http://www.' + req.headers.host + req.url, 301);
-    }
     res.render('mainpage', { user: req.user });
 
 });
