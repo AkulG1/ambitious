@@ -10,7 +10,7 @@ $('[data-toggle="slide-collapse"]').on('click', function () {
 function openNav() {
 
   if (window.matchMedia("(min-width: 641px)").matches) {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "230px";
 
   } else {
     document.getElementById("mySidenav").style.width = "180px";
