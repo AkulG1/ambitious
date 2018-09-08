@@ -14,7 +14,7 @@
     "url": "https://github.com/AkulG1/ambitious.git"
   },
   "start": "node app.js",
-  "author": "",
+  "author": "Akul",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
