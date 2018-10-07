@@ -4,24 +4,26 @@
 
 
 <ul id="navbar" class="sticktop">
-
+  <div class="flex-container">
+  <a id="logo" class="oneline nottarget" href="/">
+    <img class="nottarget" src="/assets/images/logonew.png" alt="Logo">
+  </a>
   <div id="mySidenav" class="oneline sidenav nottarget">
     <a href="javascript:void(0)" class="closebtn nottarget" onclick="closeNav()">&times;</a>
-    <a id="logo" class="oneline nottarget" href="/">
-      <img class="nottarget" src="/assets/images/logo.png" alt="Logo">
-    </a>
-    <a class="oneline navlink thirtytwoleft nottarget" href="/">Home</a>
+
+    <a class="oneline navlink thirtytwoleft nottarget" href="/">HOME</a>
     <!-- <a id="userpic" class="nottarget" href=""><img src="usericon.png" alt="usericon"></a> -->
     <% if(user){ %>
       <a class="oneline navlink thirtytwoleft nottarget" href="/profile"><%=user.local.email%></a>
-      <a class="oneline navlink thirtytwoleft nottarget" href="/logout">Logout</a>
+      <a class="oneline navlink thirtytwoleft nottarget" href="/logout">LOGOUT</a>
 
       <% }else{ %>
-        <a class="oneline navlink thirtytwoleft nottarget" href="/login">Login</a>
-        <a class="oneline navlink thirtytwoleft oneline nottarget" href="/signup">Sign Up</a>
+        <a class="oneline navlink thirtytwoleft nottarget" href="/login">LOGIN</a>
+        <a class="oneline navlink thirtytwoleft oneline nottarget" href="/signup">SIGN UP</a>
         <%}%>
-          <a class="oneline navlink thirtytwoleft nottarget" href="/contact">Contact</a>
+          <a class="oneline navlink thirtytwoleft nottarget" href="/contact">CONTACT</a>
   </div>
+</div>
   <span id="ham" class="nottarget" onclick="openNav()">
     <img class="nottarget" src='/assets/images/ham.png'>
   </span>
@@ -31,3 +33,5 @@
 <div style="margin-bottom:100px">
 
 </div>
+
+<img id="mainimage" src="/assets/images/main.jpg" alt="">

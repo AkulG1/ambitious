@@ -21,15 +21,13 @@
 }
 
 .sidenav a {
-    font-size: 18px;
+    font-size: 15px;
     transition: .3s;
     text-decoration: none;
-    color: rgb(168, 182, 193);
+    color: rgb(255, 255, 255);
 }
 
-#logo img {
-    width: 140px;
-}
+
 
 /* Shared */
 
@@ -118,8 +116,8 @@
     height: 70px;
     margin-bottom: 100px;
     padding: 0;
-    background-image: linear-gradient(rgba(23, 52, 124, 1), rgba(23, 52, 124, 1));
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, .51);
+    background-color:rgba(23, 52, 124, 1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .51);
 }
 
 .oneline {
@@ -238,6 +236,7 @@ body {
 }
 
 /* phone potrait full hd , hd  */
+/*  iPhones, Pixel 2 basically expensive phones */
 
 @media only screen and (max-width: 768px) {
     .nottarget {
@@ -267,9 +266,6 @@ body {
     #navbar {
         height: 50px;
         box-shadow: 1px 1px 8px rgba(0, 0, 0, .51);
-    }
-    #logo img {
-        width: 180px;
     }
     .sidenav a {
         font-size: 16px;
@@ -305,6 +301,35 @@ body {
         transition: .5s;
         background-color: white;
     }
+
+    #logo img{
+        height: 40px;
+    }
+
+    #mainimage{
+        display: block;
+        max-width: 100%;
+    }
 }
 
-/*  iPhones, Pixel 2 basically expensive phones */
+
+
+@media only screen and (min-width: 768px) {
+    .sidenav{
+        position: relative;
+        float: right;
+    }
+    #logo{
+        position: relative;
+        float: left;
+    }
+    #logo img{
+        height: 70px;
+    }
+    #mainimage{
+        display: block;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
