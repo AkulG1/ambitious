@@ -1,4 +1,29 @@
 console.log("Connected");
+
+// (function ($) {
+//   $(document).ready(function(){
+    
+// 	// hide .navbar first
+// 	$("#navbar").hide();
+	
+// 	// fade in .navbar
+// 	$(function () {
+// 		$(window).scroll(function () {
+//             // set distance user needs to scroll before we fadeIn navbar
+// 			if ($(this).scrollTop() > 0 ) {
+// 				$('#navbar').fadeIn();
+// 			} else {
+// 				$('#navbar').fadeOut();
+// 			}
+// 		});
+
+	
+// 	});
+
+// });
+//   }(jQuery));
+
+
 $('[data-toggle="slide-collapse"]').on('click', function () {
   $navMenuCont = $($(this).data('target'));
   $navMenuCont.animate({
