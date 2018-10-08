@@ -1,28 +1,25 @@
 console.log("Connected");
 
-// (function ($) {
-//   $(document).ready(function(){
-    
-// 	// hide .navbar first
-// 	$("#navbar").hide();
-	
-// 	// fade in .navbar
-// 	$(function () {
-// 		$(window).scroll(function () {
-//             // set distance user needs to scroll before we fadeIn navbar
-// 			if ($(this).scrollTop() > 0 ) {
-// 				$('#navbar').fadeIn();
-// 			} else {
-// 				$('#navbar').fadeOut();
-// 			}
-// 		});
+$(window).scroll(function () {
+  var n = $('#navbar'),
+    links = $('.sidenav a'),
+    pic = $('#mainimage'),
+    ham = $('#ham');
 
-	
-// 	});
+  var bottomofpic = pic.offset().top + pic.outerHeight();
+  var scrolled = $(document).scrollTop();
+  y1 = 1, y2 = 0,
+    x1 = 0, x2 = bottomofpic,
+    m = (y1 - y2) / (x2 - x1);
+  n.css('backgroundColor', 'rgba(23,52,124,' + Math.max(0.25, y2 + m * scrolled) + ')');
+  // links.css('color', 'rgba(252,63,61,' + Math.max(0, y2 - m * scrolled) + ')');
 
-// });
-//   }(jQuery));
-
+  if (scrolled > bottomofpic) {
+    n.addClass('shadowaddremovejs');
+  }else{
+    n.removeClass('shadowaddremovejs');
+  }
+});
 
 $('[data-toggle="slide-collapse"]').on('click', function () {
   $navMenuCont = $($(this).data('target'));
