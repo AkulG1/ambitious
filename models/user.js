@@ -7,6 +7,7 @@ mongoose.connect('mongodb://AkulG:akul_g123@cluster0-shard-00-00-h4mvf.mongodb.n
 
 var userSchema = new Schema({
     local: {
+        username: String,
         email: String,
         password: String,
     },

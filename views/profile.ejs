@@ -6,40 +6,44 @@
 
 <body>
     <% include ./layouts/header %>
-        <div class="container">
-            <div class="page-header text-center">
-                <h1>
-                    <span class="fa fa-anchor"></span> Profile Page</h1>
-                <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-            </div>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>
+                <span class="fa fa-anchor"></span> Profile Page</h1>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        </div>
 
-            <div class="row">
+        <div class="row">
 
-                <!-- LOCAL INFORMATION -->
-                <div class="col-sm-6">
-                    <div class="well">
-                        <h3>
-                            <span class="fa fa-user"></span> Local</h3>
+            <!-- LOCAL INFORMATION -->
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3>
+                        <span class="fa fa-user"></span> Local</h3>
 
-                        <p>
-                            <strong>id</strong>:
-                            <%= user._id %>
-                                <br>
-                                <strong>email</strong>:
-                                <%= user.local.email %>
-                                    <br>
-                                    <strong>password</strong>:
-                                    <%= user.local.password %>
-                        </p>
+                    <p>
+                        <strong>id</strong>:
+                        <%= user._id %>
+                        <br>
+                        <strong>Username</strong>:
+                        <%= user.local.username %>
+                        <br>
+                        <strong>email</strong>:
+                        <%= user.local.email %>
+                        <br>
+                        <strong>password</strong>:
+                        <%= user.local.password %>
+                    </p>
 
-                    </div>
                 </div>
-
             </div>
 
         </div>
+
+    </div>
 </body>
 <script src="/assets/javascripts/p_one.js">
+
 </script>
 
 </html>
