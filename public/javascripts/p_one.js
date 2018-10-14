@@ -1,25 +1,30 @@
 console.log("Connected");
+var n = $('#navbar');
+if (window.location.pathname == '/') {
+  $('#spacedecider').css('marginBottom', '40px');
+  $(window).scroll(function () {
+    var links = $('.sidenav a'),
+      pic = $('#mainimage'),
+      ham = $('#ham');
 
-$(window).scroll(function () {
-  var n = $('#navbar'),
-    links = $('.sidenav a'),
-    pic = $('#mainimage'),
-    ham = $('#ham');
-
-  var bottomofpic = pic.offset().top + pic.outerHeight();
-  var scrolled = $(document).scrollTop();
-  y1 = 1, y2 = 0,
-    x1 = 0, x2 = bottomofpic,
-    m = (y1 - y2) / (x2 - x1);
-  n.css('backgroundColor', 'rgba(23,52,124,' + Math.max(0.25, y2 + m * scrolled) + ')');
-  // links.css('color', 'rgba(252,63,61,' + Math.max(0, y2 - m * scrolled) + ')');
-
-  if (scrolled > bottomofpic) {
-    n.addClass('shadowaddremovejs');
-  }else{
-    n.removeClass('shadowaddremovejs');
-  }
-});
+    var bottomofpic = pic.offset().top + pic.outerHeight();
+    var scrolled = $(document).scrollTop();
+    y1 = 1, y2 = 0,
+      x1 = 0, x2 = bottomofpic,
+      m = (y1 - y2) / (x2 - x1);
+    n.css('backgroundColor', 'rgba(23,52,124,' + Math.max(0, y2 + m * scrolled) + ')');
+    // links.css('color', 'rgba(252,63,61,' + Math.max(0, y2 - m * scrolled) + ')');
+    if (scrolled > bottomofpic) {
+      n.addClass('shadowaddremovejs');
+    } else {
+      n.removeClass('shadowaddremovejs');
+    }
+  });
+} else {
+  n.css('backgroundColor', 'rgba(23,52,124,1)');
+  n.addClass('shadowaddremovejs');
+  $('#spacedecider').css('marginBottom', '100px');
+}
 
 $('[data-toggle="slide-collapse"]').on('click', function () {
   $navMenuCont = $($(this).data('target'));

@@ -5,31 +5,39 @@
 
 <ul id="navbar" class="sticktop">
   <div class="flex-container">
-  <a id="logo" class="oneline nottarget" href="/">
-    <img class="nottarget" src="/assets/images/logonew.png" alt="Logo">
-  </a>
-  <div id="mySidenav" class="oneline sidenav nottarget">
-    <a href="javascript:void(0)" class="closebtn nottarget" onclick="closeNav()">&times;</a>
+    <a id="logo" class="oneline nottarget" href="/">
+      <img class="nottarget" src="/assets/images/logonew.png" alt="Logo">
+    </a>
+    <div id="mySidenav" class="oneline sidenav nottarget">
+      <a href="javascript:void(0)" class="closebtn nottarget" onclick="closeNav()">&times;</a>
 
-    <a class="oneline navlink thirtytwoleft nottarget" href="/">HOME</a>
-    <!-- <a id="userpic" class="nottarget" href=""><img src="usericon.png" alt="usericon"></a> -->
-    <% if(user){ %>
-      <a class="oneline navlink thirtytwoleft nottarget" href="/profile"><%=user.local.email%></a>
+      <a class="oneline navlink thirtytwoleft nottarget" href="/">HOME</a>
+      <!-- <a id="userpic" class="nottarget" href=""><img src="usericon.png" alt="usericon"></a> -->
+      <% if(user){ %>
+      <a class="oneline navlink thirtytwoleft nottarget" href="/profile">HI,
+        <% var sp = user.local.username.indexOf(' ') %>
+        <% if(sp==-1){ %>
+        <%= user.local.username %>
+        <% }else{ %>
+        <%= user.local.username.substring(0,sp) %>
+        <% } %>
+
+
+      </a>
       <a class="oneline navlink thirtytwoleft nottarget" href="/logout">LOGOUT</a>
 
       <% }else{ %>
-        <a class="oneline navlink thirtytwoleft nottarget" href="/login">LOGIN</a>
-        <a class="oneline navlink thirtytwoleft oneline nottarget" href="/signup">SIGN UP</a>
-        <%}%>
-          <a class="oneline navlink thirtytwoleft nottarget" href="/contact">CONTACT</a>
+      <a class="oneline navlink thirtytwoleft nottarget" href="/login">LOGIN</a>
+      <a class="oneline navlink thirtytwoleft oneline nottarget" href="/signup">SIGN UP</a>
+      <%}%>
+      <a class="oneline navlink thirtytwoleft nottarget" href="/contact">CONTACT</a>
+    </div>
   </div>
-</div>
   <span id="ham" class="nottarget" onclick="openNav()">
     <img class="nottarget" src='/assets/images/ham.png'>
   </span>
 </ul>
 
 
-<div style="margin-bottom:40px">
-
+<div id="spacedecider">
 </div>
