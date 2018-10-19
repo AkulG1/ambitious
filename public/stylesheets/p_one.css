@@ -392,7 +392,6 @@ body {
         transition: .3s;
         text-decoration: none;
         color: #818181;
-        transition: opacity .3s ease-out;
     }
     .sidenav .closebtn {
         font-size: 36px;
