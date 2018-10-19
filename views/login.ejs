@@ -17,29 +17,20 @@
     </div>
     <% } %>
 
-      <form class="form1" action="/login" method="POST">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input id="in" name="email"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input id="in" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-          <input id="in" type="checkbox" class="form-check-input">
-          <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-        </div>
-        <button id="in" type="submit" class="btn btn-primary">Submit</button>
-        <br>
-        <button class="loginBtn loginBtn--facebook">
-          Login with Facebook
-        </button>
-        <br>
-        <button class="loginBtn loginBtn--google">
-          Login with Google
-        </button>
-      </form>
+    <form action="/login" method="post">
+
+      <h1>Log In</h1>
+  
+      <fieldset>
+        <legend><span class="number">1</span>Your basic info</legend>
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="email">
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        </fieldset>
+        <button type="submit">Sign Up</button>
 
 </body>
 <script src="/assets/javascripts/p_one.js">
