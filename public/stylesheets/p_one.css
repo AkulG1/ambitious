@@ -382,6 +382,8 @@ body {
     }
     #navbar {
         height: 50px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, .51);
+
     }
 
     .sidenav a {
@@ -448,6 +450,9 @@ body {
     }
     #logo img{
         height: 70px;
+    }
+    #navbar{
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, .51);
     }
     #mainimage{
         display: block;
