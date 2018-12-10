@@ -1,15 +1,6 @@
 console.log("Connected");
 
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-100px";
-  }
-  prevScrollpos = currentScrollPos;
-}
+$(document).ready(function () {
 
 $('[data-toggle="slide-collapse"]').on('click', function () {
   $navMenuCont = $($(this).data('target'));
@@ -45,4 +36,6 @@ function closeNav() {
   $('.overlay').hide();
 
 }
+});
+
 
