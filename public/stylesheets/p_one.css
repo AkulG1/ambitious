@@ -229,6 +229,7 @@
     position: fixed;
     top: 0;
     z-index: 5;
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
 #navbar {
@@ -287,8 +288,11 @@ h1 {
 }
 
 h2 {
-    color: rgb(39, 55, 143);
+    font-weight: bold;
+    transition: opacity .3s;
+    letter-spacing: .1em;
     opacity: .75;
+    color: rgb(39, 55, 143);
 }
 
 .boxy {
