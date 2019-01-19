@@ -84,6 +84,18 @@ router.get('/jeeadvanced', function (req, res) {
     res.render('jeeadvanced', { user: req.user });
 })
 
+router.get('/contact', function (req, res) {
+    res.render('contact', { user: req.user });
+})
+
+router.get('/kvpy', function (req, res) {
+    res.render('kvpy', { user: req.user });
+})
+
+router.get('/neet', function (req, res) {
+    res.render('neet', { user: req.user });
+})
+
 router.get('/jeemain/:year', function (req, res) {
     res.render(__dirname + '/views/jee_main/' + req.params.year, { user: req.user });
 });
