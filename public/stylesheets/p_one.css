@@ -1,40 +1,42 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Nunito', sans-serif;
     color: #384047;
-  }
-  
-  form {
+}
+
+form {
     max-width: 300px;
     margin: 10px auto;
     padding: 10px 20px;
     background: #f4f7f8;
     border-radius: 8px;
-  }
-  
-  h1 {
+}
+
+h1 {
     margin: 0 0 30px 0;
     text-align: center;
-  }
-  
-  input[type="text"],
-  input[type="password"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="time"],
-  input[type="url"],
-  textarea,
-  select {
-    background: rgba(255,255,255,0.1);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     font-size: 16px;
     height: auto;
@@ -44,22 +46,22 @@
     width: 100%;
     background-color: #e8eeef;
     color: #8a97a0;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
     margin-bottom: 30px;
-  }
-  
-  input[type="radio"],
-  input[type="checkbox"] {
+}
+
+input[type="radio"],
+input[type="checkbox"] {
     margin: 0 4px 8px 0;
-  }
-  
-  select {
+}
+
+select {
     padding: 6px;
     height: 32px;
     border-radius: 2px;
-  }
-  
-  button {
+}
+
+button {
     padding: 19px 39px 18px 39px;
     color: #FFF;
     background-color: #5C68AA;
@@ -70,31 +72,31 @@
     width: 100%;
     border: 1px solid #5C68AA;
     border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
     margin-bottom: 10px;
-  }
-  
-  fieldset {
+}
+
+fieldset {
     margin-bottom: 30px;
     border: none;
-  }
-  
-  legend {
+}
+
+legend {
     font-size: 1.4em;
     margin-bottom: 10px;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 8px;
-  }
-  
-  label.light {
+}
+
+label.light {
     font-weight: 300;
     display: inline;
-  }
-  
-  .number {
+}
+
+.number {
     background-color: #5C68AA;
     color: #fff;
     height: 30px;
@@ -104,19 +106,18 @@
     margin-right: 4px;
     line-height: 30px;
     text-align: center;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
     border-radius: 100%;
-  }
-  
-  @media screen and (min-width: 480px) {
-  
+}
+
+@media screen and (min-width: 480px) {
     form {
-      max-width: 480px;
+        max-width: 480px;
     }
-  
-  }
+}
 
 /* ------------------------------------- */
+
 /*  define userpic margin padding etc later */
 
 .overlay {
@@ -144,10 +145,7 @@
     transition: .3s;
     text-decoration: none;
     color: white;
-
 }
-
-
 
 /* Shared */
 
@@ -229,16 +227,19 @@
     position: fixed;
     top: 0;
     z-index: 5;
-    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+    transition: top 0.3s;
+    /* Transition effect when sliding down (and up) */
 }
 
 #navbar {
-    background-color:rgba(23, 52, 124, 1);
+    background-color: rgba(23, 52, 124, 1);
     width: 100%;
-    height: 70px;
-    padding: 0;
+    height: 80px;
+    padding: 10px 0 0 0;
+    transition: 0.3s;
 }
-.shadowaddremovejs{
+
+.shadowaddremovejs {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .51);
 }
 
@@ -256,7 +257,6 @@
     padding: 1px;
     opacity: .75;
 }
-
 
 html,
 body {
@@ -321,8 +321,6 @@ h2 {
     margin: 1px solid white;
 }
 
-/*  */
-
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -337,10 +335,6 @@ body {
     padding: 8px 8px 8px 32px;
     white-space: nowrap;
 }
-
-
-
-/*  */
 
 .form1 {
     padding-top: 50px;
@@ -357,9 +351,11 @@ body {
 }
 
 /* phone potrait full hd , hd  */
+
 /*  iPhones, Pixel 2 basically expensive phones */
 
 @media only screen and (max-width: 768px) {
+    h1{font-size: 2.3rem;}
     .nottarget {
         text-align: center;
     }
@@ -371,7 +367,6 @@ body {
         box-shadow: 4px 4px 11px rgba(33, 33, 33, .2);
     }
     .form1 {
-        
         margin-left: auto;
         margin-right: auto;
         width: 300px;
@@ -387,9 +382,8 @@ body {
     #navbar {
         height: 50px;
         box-shadow: 1px 1px 6px rgba(0, 0, 0, .51);
-
+        padding: 0;
     }
-
     .sidenav a {
         font-size: 16px;
         display: block;
@@ -397,11 +391,9 @@ body {
         text-decoration: none;
         color: #818181;
     }
-
     .sidenav a:hover {
         color: #f1f1f1;
     }
-
     .sidenav .closebtn {
         font-size: 36px;
         position: absolute;
@@ -430,46 +422,42 @@ body {
         transition: .3s;
         background-color: white;
     }
-
-    #logo img{
+    #logo img {
         height: 40px;
     }
-
-    #mainimage{
+    #mainimage {
         display: block;
         max-width: 100%;
     }
 }
 
-
-
 @media only screen and (min-width: 768px) {
-    .sidenav{
+    .sidenav {
         position: relative;
         float: right;
     }
-    #logo{
+    #logo {
         position: relative;
         float: left;
     }
-    #logo img{
+    #logo img {
         height: 70px;
     }
-    #navbar{
+    #navbar {
         box-shadow: 2px 2px 8px rgba(0, 0, 0, .51);
     }
-    #mainimage{
+    #mainimage {
         display: block;
         max-width: 60%;
         margin-left: auto;
         margin-right: auto;
     }
-    .sidenav a{
+    .sidenav a {
         display: inline-block;
         margin-top: 10px;
         color: #f1f1f1;
     }
-    .sidenav a:hover{
+    .sidenav a:hover {
         color: #818181;
     }
 }
