@@ -27,7 +27,7 @@ $(document).ready(function () {
     var itselements = $(".nottarget");
     if (!snav.is(evt.target) && !itselements.is(evt.target) && window.matchMedia("(max-width: 768px)").matches) {
       document.getElementById("mySidenav").style.width = 0;
-      $('.overlay').hide();
+      $('.overlay').hide();3
     }
   });
 
