@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var db=require('./models/user')
 
 router.get('/login', function (req, res, next) {
-    res.render('login', { message: req.flash('loginMessage'), user: req.user });
+    if(req.session.loggedin){
+        res.redirect('/profile');
+    }else{
+        res.render('login', { message: req.flash('loginMessage'), user: req.user });
+    }
+    res.end();
 });
 
 router.get('/', function (req, res) {
@@ -11,31 +17,68 @@ router.get('/', function (req, res) {
 });
 
 router.get('/signup', function (req, res, next) {
+    if(req.session.loggedin){
+        res.redirect('/profile');
+    }else{
     res.render('signup', { message: req.flash('signupMessage'), user: req.user });
+    }
 });
 // process the login form
-router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/profile', // redirect to the secure profile section
-    failureRedirect: '/login', // redirect back to the signup page if there is an error
-    failureFlash: true // allow flash messages
-}));
+// router.post('/login', passport.authenticate('local-login', {
+//     successRedirect: '/profile', // redirect to the secure profile section
+//     failureRedirect: '/login', // redirect back to the signup page if there is an error
+//     failureFlash: true // allow flash messages
+// }));
+
+router.post('/login/auth', function(request, response) {
+	var email = request.body.email;
+	var password = request.body.password;
+	if (email && password) {
+		db.connection.query('SELECT * FROM info WHERE email = ? AND password = ?', [email, password], function(error, results, fields) {
+            if(error)
+                throw error;
+
+            if (results.length>0) {
+				request.session.loggedin = true;
+                request.session.email = email;
+                request.session.name=results[0].name;
+				response.redirect('/profile');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
 
 
 // app.post('/signup', do all our passport stuff here);
-router.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/profile', // redirect to the secure profile section
-    failureRedirect: '/signup', // redirect back to the signup page if there is an error
-    failureFlash: true // allow flash messages
-}));
+// router.post('/signup', passport.authenticate('local-signup', {
+//     successRedirect: '/profile', // redirect to the secure profile section
+//     failureRedirect: '/signup', // redirect back to the signup page if there is an error
+//     failureFlash: true // allow flash messages
+// }));
 // =====================================
 // PROFILE SECTION =====================
 // =====================================
 // we will want this protected so you have to be logged in to visit
 // we will use route middleware to verify this (the isLoggedIn function)
-router.get('/profile', isLoggedIn, function (req, res) {
-    res.render('profile', {
-        user: req.user // get the user out of session and pass to template
-    });
+// router.get('/profile', isLoggedIn, function (req, res) {
+//     res.render('profile', {
+//         user: req.user // get the user out of session and pass to template
+//     });
+// });
+
+router.get('/profile',function(request,response){
+    if(request.session.loggedin){
+        response.send("Welcome back "+ request.session.name+"!");
+    }else{
+        response.send("Please login to view this page!");
+    }
+    response.end();
 });
 
 // =====================================
@@ -58,11 +101,11 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
-router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/profile', // redirect to the secure profile section
-    failureRedirect: '/login', // redirect back to the signup page if there is an error
-    failureFlash: true // allow flash messages
-}));
+// router.post('/login', passport.authenticate('local-login', {
+//     successRedirect: '/profile', // redirect to the secure profile section
+//     failureRedirect: '/login', // redirect back to the signup page if there is an error
+//     failureFlash: true // allow flash messages
+// }));
 
 router.get('/bitsat', function (req, res) {
     res.render('bitsat', { user: req.user });
