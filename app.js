@@ -29,8 +29,9 @@ app.set('view engine', 'ejs')
 
 app.use(session({
     secret: 'imnotsurewhatthisisforlol',
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
 }));
 app.use(flash()); // use connect-flash for flash messages stored in session
 
