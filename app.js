@@ -11,8 +11,6 @@ var session = require('express-session');
 
 var userroute = require('./routes');
 
-// 
-
 // require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
@@ -26,11 +24,6 @@ app.use(bodyParser.json());
 
 
 require('./config/passport')(passport); // pass passport for configuration
-
-
-
-// 
-
 
 app.use('/assets', express.static(__dirname + '/public'));
 

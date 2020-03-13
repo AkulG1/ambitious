@@ -3,12 +3,12 @@ var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 var configDB = require('../config/db.js');
 
-mongoose.connect('mongodb://AkulG:akul_g123@cluster0-shard-00-00-h4mvf.mongodb.net:27017,cluster0-shard-00-01-h4mvf.mongodb.net:27017,cluster0-shard-00-02-h4mvf.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/ambitious');
 
 var userSchema = new Schema({
     local: {
         username: String,
-        email: String,
+        email:{type:String ,unique:true,lowercase:true},
         password: String,
     },
     facebook: {

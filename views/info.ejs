@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Tell Us More</title>
+      <meta name="description" content="Tell Us More">
+    <% include ./layouts/head %>
+  </head>
+  
+  <body>
+    
+    <% include ./layouts/header %>
+    
+    <h1>Tell Us More About Yourself</h1>
+    
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger">
+          <%= message %>
+        </div>
+        <% } %>
+
+    <form action="/signup" method="post">
+        
+
+
+</body>
+<script src="/assets/javascripts/p_one.js">
+
+</script>
+</html>

@@ -3,12 +3,17 @@ var router = express.Router();
 var passport = require('passport');
 
 router.get('/login', function (req, res, next) {
+    if(req.user) return res.redirect('/');
     res.render('login', { message: req.flash('loginMessage'), user: req.user });
 });
 
 router.get('/', function (req, res) {
     res.render('mainpage', { user: req.user });
 });
+
+router.get('/info',isLoggedIn,function(req,res){
+    res.render('info', {user:req.user});
+})
 
 router.get('/signup', function (req, res, next) {
     res.render('signup', { message: req.flash('signupMessage'), user: req.user });
